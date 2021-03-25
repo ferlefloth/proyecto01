@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+//Estilos dinámicos
 
 /*los ESTADOS: Es un objeto que representa el estado actual de un componente */ 
 class Fruta extends Component {
@@ -18,21 +18,31 @@ class Fruta extends Component {
     
     
     render(){
-    return(
+      const styles ={ // Se hace una constante que tiene todos las configs de estilo. #DATAZO: Se puede hacer : Tecla Windos + . y podemos poner emojis :D
+        border: '1px solid black',
+        marginBottom: '1em',
+        borderRadius: '0.5em',
+        padding: '1em',
+        background : this.state.cantidad >0 ? 'green' : 'white',
+        transition: 'all 400ms east-out'
+        
+      }
     
-        <div>
+      return(
+    
+        <div style = {styles} >
     
           
           <h3>{this.props.name}</h3>
-          <h4>Cantidad : {this.state.cantidad}</h4>     {/*//No es buena práctica tener eventos con flechas. el setState vuelve a renderizar SOLO lo que se modificó en el elemento dentro del DOM */}
+          <h4>Cantidad : {this.state.cantidad}😊</h4>     {/*//No es buena práctica tener eventos con flechas. el setState vuelve a renderizar SOLO lo que se modificó en el elemento dentro del DOM */}
             <button onClick={this.sumar}>  + </button>   {/*El this.agregar no podría referirse al botón , hay que ponerle el  .bind para que el this.agregar funcione. se fuerza a que el this. agregar lo busque dentro de la clase y no dentro de el método agregar()*/}
             <button onClick={this.restar}>  -  </button> 
           
     
             <button onClick={this.reset.bind(this)}>  Resetff  </button> {/*"""""""FORMA 1 DE LOS BINDS""""""": De esta forma es un poco mas Sucio , pero está bien. Lo ideal es hacerlo dentro del constructor como se muestra en los de arriba*/ }
             
-            
-          <p>${this.props.price}</p>
+          <p>Precio por unidad : ${this.props.price}</p>
+          <p>${this.props.price * this.state.cantidad}</p>
         </div>
     );
     }

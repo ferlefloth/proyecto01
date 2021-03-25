@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import Fruta from './components/frutas'
+import Fruta from './components/Frutas'
 
 
 
@@ -34,7 +34,7 @@ class App extends Component {
           <Saludos name="Victor" apellido="Melhouza"/>{/*Tambien se pueden hacer con PROPS*/}
 
           <Fruta />
-          <Fruta name = "Banana"/>
+          <Fruta name = "Banana" price='5'/>
 
 
         </div>
