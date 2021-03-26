@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Button from '@material-ui/core/Button'
 //Estilos dinámicos
 
 /*los ESTADOS: Es un objeto que representa el estado actual de un componente */ 
@@ -35,8 +36,8 @@ class Fruta extends Component {
           
           <h3>{this.props.name}</h3>
           <h4>Cantidad : {this.state.cantidad}😊</h4>     {/*//No es buena práctica tener eventos con flechas. el setState vuelve a renderizar SOLO lo que se modificó en el elemento dentro del DOM */}
-            <button onClick={this.sumar}>  + </button>   {/*El this.agregar no podría referirse al botón , hay que ponerle el  .bind para que el this.agregar funcione. se fuerza a que el this. agregar lo busque dentro de la clase y no dentro de el método agregar()*/}
-            <button onClick={this.restar}>  -  </button> 
+            <Button onClick={this.sumar} variant="contained" color="primary">  + </Button>  {/*El this.agregar no podría referirse al botón , hay que ponerle el  .bind para que el this.agregar funcione. se fuerza a que el this. agregar lo busque dentro de la clase y no dentro de el método agregar()*/}
+            <Button onClick={this.restar} >  - </Button>  
           
     
             <button onClick={this.reset.bind(this)}>  Resetff  </button> {/*"""""""FORMA 1 DE LOS BINDS""""""": De esta forma es un poco mas Sucio , pero está bien. Lo ideal es hacerlo dentro del constructor como se muestra en los de arriba*/ }

@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
 import Fruta from './components/Frutas'
-
-
+import {AppBar, Tabs, Tab} from '@material-ui/core/'
+import Background from './components/background/background'
 
 //También se puede laburar con componentes creados de diversas formas
 class Saludos extends Component{ constructor(){ super(); }
@@ -30,12 +30,20 @@ class App extends Component {
   render(){ // cuando se labura con clases tenemos que poner este tipo de function para que se haga el renderizado
       return( //Siempre se debe de retornar un JSX aquí adentro
         <div>
-          <h2>{prueba(this.nombre,this.apellido)}</h2>  {/*tambien podría usarse el this.nombre en ese caso  */}
-          <Saludos name="Victor" apellido="Melhouza"/>{/*Tambien se pueden hacer con PROPS*/}
+          <AppBar  >
+            <Tabs>
+              <Tab label="Mona" position="fixed"/>
+              <Tab label="Ahorros" position="fixed"/>
+              <Tab label="Gastos" position="fixed"/>
+            </Tabs>
+          </AppBar>
+          
+          {/* <h2>{prueba(this.nombre,this.apellido)}</h2>  {/*tambien podría usarse el this.nombre en ese caso  */}
+          {/* <Saludos name="Victor" apellido="Melhouza"/>Tambien se pueden hacer con PROPS */} 
 
           <Fruta />
           <Fruta name = "Banana" price='5'/>
-
+          <Background />    
 
         </div>
       )
