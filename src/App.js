@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react';
-import Fruta from './components/Frutas'
+//import Fruta from './components/Frutas'
 import {AppBar, Tabs, Tab} from '@material-ui/core/'
-import Background from './components/background/background'
-import Clicks from './components/Clicks' //el hecho de solo nombrar la carpeta Clicks, lo que hace , es buscar el index dentro de la carpeta por defecto
+//import Clicks from './components/Clicks' //el hecho de solo nombrar la carpeta Clicks, lo que hace , es buscar el index dentro de la carpeta por defecto
+import Clicks from './components/Clicks'
+import ButtonModal from './components/Buttons/ButtonModal'
+
 
 //También se puede laburar con componentes creados de diversas formas
 class Saludos extends Component{ constructor(){ super(); }
@@ -45,7 +47,10 @@ class App extends Component {
           <Fruta />
           <Fruta name = "Banana" price='5'/>
 
-          <Clicks/>    
+          <Clicks/>
+          <ButtonModal />
+          
+          
 
         </div>
       )
