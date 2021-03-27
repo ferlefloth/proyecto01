@@ -8,7 +8,7 @@ function ButtonModal(){ //acá inicia la función
 
     return(
 
-        <div >
+        <div  >
     
             <Button>
                 PushMe!
