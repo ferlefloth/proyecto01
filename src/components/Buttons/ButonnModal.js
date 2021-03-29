@@ -1,6 +1,6 @@
 import React, {Component}from 'react'
 import Button from '@material-ui/core/Button'
-
+import styles from './ButonnModal.module.css'
 
 function ButtonModal(){ //acá inicia la función
 
@@ -10,7 +10,7 @@ function ButtonModal(){ //acá inicia la función
 
         <div  >
     
-            <Button>
+            <Button className={styles.boton}>
                 PushMe!
             </Button>
         </div>
