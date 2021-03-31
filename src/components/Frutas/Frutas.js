@@ -50,4 +50,4 @@ class Fruta extends Component {
     
 }
 
-export default Fruta;
+export default Fruta;  

@@ -6,7 +6,7 @@ import {AppBar, Tabs, Tab} from '@material-ui/core/'
 //import Clicks from './components/Clicks' //el hecho de solo nombrar la carpeta Clicks, lo que hace , es buscar el index dentro de la carpeta por defecto
 import Clicks from './components/Clicks'
 import ButtonModal from './components/Buttons/ButtonModal'
-
+import Modal from '@material-ui/core/Modal'
 
 //También se puede laburar con componentes creados de diversas formas
 class Saludos extends Component{ constructor(){ super(); }
@@ -48,6 +48,7 @@ class App extends Component {
           <Fruta name = "Banana" price='5'/>
 
           <Clicks/>
+          <Modal show={true} onHide={}/>
           <ButtonModal />
           
           

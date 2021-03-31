@@ -1,23 +1,29 @@
 import React, {Component}from 'react'
 import Button from '@material-ui/core/Button'
-import styles from './ButonnModal.module.css'
+import { makeStyles } from '@material-ui/core/styles';
 
-function ButtonModal(){ //acá inicia la función
+const useStyles = makeStyles({ //Se usa el make styles con esta función para poder determinar con código JS y CSS que es lo que podemos hacer para darle color 
+    root: {
+      backgroundColor: 'red',
+    },
+  });
 
-    //acá irían todas las states y effects
 
+function ButtonModal(props){  //debe de recibir props
+
+    const classes = useStyles();// quizás tenga que pasarle con argumento el PROPS, pero al parecer, no hace falta
+   
     return(
 
-        <div  >
-    
-            <Button className={styles.boton}>
-                PushMe!
+        <div>
+            
+            <Button className = {classes.root}>
+                
+                PushMe! Mi Reyshe
             </Button>
         </div>
     )
 
 }
-
-
 
 export default ButtonModal;
