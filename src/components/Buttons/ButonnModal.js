@@ -17,15 +17,19 @@ import Modal from '@material-ui/core/Modal'
   }
   
   const useStyles = makeStyles((theme) => ({ //Se usa el make styles con esta función para poder determinar con código JS y CSS que es lo que podemos hacer para darle color  
+   
+   
     paper: { 
       position: 'absolute',
       width: 400,
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
-      boxShadow: theme.shadows[5], //¿¿¿¿¿No se porque recibe un Theme??????
+      boxShadow: theme.shadows[5], //No se porque recibe un Theme??????
       padding: theme.spacing(2, 4, 3),
     },
+    
   }));
+
 
 function ButtonModal(){  //debe de recibir props
 
@@ -42,13 +46,13 @@ function ButtonModal(){  //debe de recibir props
         setOpen(false)
     }
 
-    const body = (
+    const body = (//Este body se corresponde al de la línea 69 
         <div style={modalStyle}  className={classes.paper}> {/*Se pone el Style (function de ModalStyle con el UseState) y se pone el MakeStyle en donde se utiliza el MakeStyles de materiailUI . En este caso podremos reenderizar lo que está dentro del modal*/}
           <h2 id="simple-modal-title">Texto en modal</h2>
           <p id="simple-modal-description">
             Esta es unae prueba para hacer un modal
           </p>
-          
+          {/*Acá debería ir los placeholders para poder hacer un ingreso de los datos*/ }
         </div>
       );
 
@@ -56,7 +60,7 @@ function ButtonModal(){  //debe de recibir props
 
         <div>
             
-            <Button className = {classes.root} onClick={handleOpen}>
+            <Button  onClick={handleOpen}>
                 
                 PushMe! Mi Reyshe
             </Button>
